@@ -8,11 +8,8 @@ import re  # 必须导入正则表达式模块
 
 
 # --- 1. 配置和客户端初始化 ---
-# client = OpenAI(
-#     api_key="515910d5fc3d4b219dca5e1955bcfbc0.BBS7k22L6svnfjEP",
-#     base_url="https://open.bigmodel.cn/api/paas/v4/"
-# )
-client = OpenAI(api_key="sk-hhdlfuwibkcceysdqnszndquuyhuoaavvrdtnzqltttejdnt", 
+
+client = OpenAI(api_key="your key", 
                 base_url="https://api.siliconflow.cn/v1")
 
 
@@ -522,7 +519,7 @@ FUNCTION_MAP = {
     # 设置外观
     "apply_visual_style": lib.apply_visual_style,
 
-    # 倒角
+    # 倒角 待添加
 
     # 阵列
     # "linear_pattern": lib.linear_pattern,
@@ -550,7 +547,8 @@ def get_llm_planner_output(user_input: str, system_prompt: str, model_name: str)
         )
         
         message = response.choices[0].message
-        
+      
+        # 对大模型的输出进行解析
         # 1. openAI的标准，优先检查 Tool Calls
         if message.tool_calls:
             print(f"⚡ LLM 触发了 {len(message.tool_calls)} 个工具调用。")
