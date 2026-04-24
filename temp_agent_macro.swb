@@ -1,0 +1,30 @@
+
+Dim swApp As Object
+Dim Part As Object
+Dim boolstatus As Boolean
+
+Sub main()
+    Set swApp = Application.SldWorks
+    Set Part = swApp.ActiveDoc
+    
+    ' Force unit to meters (Python input is already in meters)
+    Dim myRadius As Double
+    myRadius = 0.005
+    
+    ' Execute Fillet
+    ' Parameters: Option=1 (ConstRadius), Radius=myRadius, ConstOptions=1 (Propagate)
+    
+    Dim fMgr As Object
+    Set fMgr = Part.FeatureManager
+    
+    ' Try creating fillet with Tangent Propagation (1)
+    Dim swFeat As Object
+    Set swFeat = fMgr.FeatureFillet(1, myRadius, 1, 0, 0, 0, 0)
+    
+    If swFeat Is Nothing Then
+        ' Retry without propagation (0) if the first attempt failed
+        Set swFeat = fMgr.FeatureFillet(1, myRadius, 0, 0, 0, 0, 0)
+    End If
+    
+End Sub
+    
