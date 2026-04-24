@@ -16,7 +16,10 @@ LLM-Based Intelligent Agent for Automated SolidWorks Modeling
 该智能体使用的大模型API来源于硅基流动（https://siliconflow.cn/，具体使用流程参考官方网站），其中对于中国的各个大语言模型，智普清言的模型效果最好，GLM4.7,GLM4.6等。
 
 其他文件说明：
-关键内容记录.docx: 是关于SW底层API文件（各个功能函数）的详细说明，当你需要扩展给智能体添加新tools的时候，可以来这里查。
+关键内容记录.docx: 是关于SW底层API文件（各个功能函数）的详细说明，当你需要扩展给智能体添加新tools的时候，可以来这里查。SW_2024_type_library.py就是按照说明生成的底层API文件，没必要看，很繁杂。
 功能说明.docx：是关于该版本智能体具备的具体功能描述。
+所有的.SLDPRT均为生成的模型文件。
+
+
 
 
