@@ -19,9 +19,9 @@ LLM-Based Intelligent Agent for Automated SolidWorks Modeling
 **该项目运行流程：**
 （1）把整个项目下载，
 （2）并配置好python环境和安装好合适版本的SW，
-（3）填写你的大模型APL KEY(我用的是硅基流动)，以及修改文件保存的路径，这都在agent.py里修改。
-（4）还要设置好你的SW模板的路径（一般是：template_path = rf"C:\ProgramData\SOLIDWORKS\SOLIDWORKS 2024\templates\gb_part.prtdot"），
-（5）运行主程序agent.py，就可以发现该智能体会打开你的SW，进行建模。
+（3）填写你的大模型APL KEY(我用的是硅基流动，在llm_connector.py里修改)，以及修改文件保存的路径（在agent.py里修改）。
+（4）还要设置好你的SW模板的路径（一般是：template_path = rf"C:\ProgramData\SOLIDWORKS\SOLIDWORKS 2024\templates\gb_part.prtdot"），（在agent.py里修改）
+（5）运行主程序agent.py，就可以发现该智能体会自动打开你的SW，进行建模。
 
 
 其他文件说明：
