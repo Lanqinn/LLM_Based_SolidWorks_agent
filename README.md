@@ -1,10 +1,10 @@
 # LLM_Based_SolidWorks_agent
 LLM-Based Intelligent Agent for Automated SolidWorks Modeling基于大语言模型的 SolidWorks 自动化智能建模助手
 
-这是一个通过自然语言输入进行简单自动3D建模的智能体，通过LLM控制SolidWorks进行3D零件生成。可应用于机械设计，也可作为智能体开发的入门项目。
+    这是一个通过自然语言输入进行简单自动3D建模的智能体，通过LLM控制SolidWorks进行3D零件生成。可应用于机械设计，也可作为智能体开发的入门项目。
 本项目开发了一个基于大语言模型（LLM）的智能体，能够解析用户的自然语言指令，通过 Python API 自动驱动 SolidWorks 完成复杂的 3D 建模任务。它不仅能理解“画个正方体”这种简单指令，还能处理“在顶面中心打一个直径10mm的穿透孔”等涉及空间几何关系的组合逻辑。
 
-🌟 核心技术亮点 (Key Features)
+核心技术亮点 (Key Features)
   多步逻辑规划 (Structured Multi-step Planning):
   利用 LLM 的推理能力，将模糊的用户需求（如“建个桌子”）拆解为“创建草图 -> 绘制矩形 -> 拉伸 -> 选面 -> 阵列”等原子化指令序列。
   
