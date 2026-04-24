@@ -4,17 +4,25 @@ LLM-Based Intelligent Agent for Automated SolidWorks Modeling
 这是一个通过自然语言输入进行简单自动3D建模的智能体，通过LLM控制SolidWorks进行3D零件生成。可应用于机械设计，也可作为智能体开发的入门项目。
 
 1、环境配置
-详见文件夹：“环境配置指南”，包含两部分：（1）environment.yaml文件，说明了python环境；（2）环境配置.docx，说明了SolidWorks版本，和一些其他的简要说明。
+详见文件夹：“环境配置指南”，包含两部分：（1）environment.yaml文件，说明了python环境；（2）环境配置.docx，说明了SolidWorks版本（后续简称SW），和一些其他的简要说明。
 
 2、运行
 源文件在“v2_2”里，主要是3个程序：（1）agent.py是主程序，直接运行即可；（2）lib.py是封装的SW底层API函数，也就是大模型调用的tools，给出了一些常见拉伸、切除等函数的输入输出，和简要的功能描述;
 （3）llm_connector.py，是调度器，主要是负责和大模型通信，解析大模型的输出，将其转化为有效的、可执行的命令。
-当你把整个项目下载，并配置好python环境和安装好SW，只需要填写你的大模型APL KEY，以及修改文件保存的路径，还要设置好你的SW模板的路径（一般是：），然后运行主程序agent.py，就可以发现该智能体会打开你的SW，进行建模。
 
 3、示例
 在文件夹：“宣传”中，是一些基本的演示示例，视频文件，展示了一些基本功能的实现，包括基本的拉伸切除、旋转生成、文字拉伸、外观渲染等功能。
 
 该智能体使用的大模型API来源于硅基流动（https://siliconflow.cn/，具体使用流程参考官方网站），其中对于中国的各个大语言模型，智普清言的模型效果最好，GLM4.7,GLM4.6等。
+
+
+**该项目运行流程：**
+（1）把整个项目下载，
+（2）并配置好python环境和安装好合适版本的SW，
+（3）填写你的大模型APL KEY(我用的是硅基流动)，以及修改文件保存的路径，这都在agent.py里修改。
+（4）还要设置好你的SW模板的路径（一般是：template_path = rf"C:\ProgramData\SOLIDWORKS\SOLIDWORKS 2024\templates\gb_part.prtdot"），
+（5）运行主程序agent.py，就可以发现该智能体会打开你的SW，进行建模。
+
 
 其他文件说明：
 关键内容记录.docx: 是关于SW底层API文件（各个功能函数）的详细说明，当你需要扩展给智能体添加新tools的时候，可以来这里查。SW_2024_type_library.py就是按照说明生成的底层API文件，没必要看，很繁杂。
